@@ -3,12 +3,21 @@
 'use strict';
 
 const tasks = require('./gember/tasks');
-const args = require('yargs').argv;
+const exec = require('shelljs').exec;
+const args = require('yargs')
+                .array('gember')
+                .argv;
+
 const task = args._;
-const tasksArgs = args;
+let tasksArgs = args;
 
-console.log('gember.js => ', args);
+console.log(tasksArgs);
+
+delete tasksArgs['_'];
+delete tasksArgs['$0'];
+
 console.log('taskargs => ', tasksArgs);
+console.log('taskargs => ', tasksArgs[0]);
 
-tasks.run('start');
-tasks.run(task, args);
+exec(`node gember/task/start.js --colors`);
+tasks.run(task, [tasksArgs]);

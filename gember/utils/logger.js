@@ -55,7 +55,7 @@ const logger = require("tfunk").Compiler({
     },
     'error': function(string) {
         let s = split(string);
-        return console.log(this.compile(`{blue:[}${showDate()}{blue:]} {red:[error]} {white:${s[1]}`));
+        return console.log(this.compile(`{blue:[}${showDate()}{blue:]} {red:[error]}{white:${s[0]}`));
     }
 });
 

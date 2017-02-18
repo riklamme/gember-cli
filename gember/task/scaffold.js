@@ -7,7 +7,7 @@ const replace = require('../utils/removeBasePath');
 
 const args = require('yargs').argv;
 
-console.log('scaffold.js => ', args);
+// console.log('scaffold.js => ', args);
 
 /**
  * Check if directory exist, if not create the directory and log a terminal line
@@ -22,10 +22,10 @@ const createDir = (key) => {
  * Scaffold sources directory structure
  */
 logger.compile('{start: scaffold, scaffold sources folder...');
-Object.keys(gc.sources).forEach(key => createDir(gc.sources[key]));
+// Object.keys(gc.sources).forEach(key => createDir(gc.sources[key]));
 
 /**
  * Scaffold build directory structure
  */
 logger.compile('{start: scaffold, scaffold build folder...');
-Object.keys(gc.build).forEach(key => createDir(gc.build[key]));
+// Object.keys(gc.build).forEach(key => createDir(gc.build[key]));
