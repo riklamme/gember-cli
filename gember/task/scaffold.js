@@ -4,10 +4,12 @@ const gc = require('../../gember.config');
 const exec = require('shelljs').exec;
 const logger = require('../utils/logger');
 const replace = require('../utils/removeBasePath');
+const args = require('yargs')
+    			.default({ directory : 'all' })
+				.argv;
 
-const args = require('yargs').argv;
-
-// console.log('scaffold.js => ', args);
+console.log('scaffold.js => ', args);
+console.log('scaffold.js => ', args.directory);
 
 /**
  * Check if directory exist, if not create the directory and log a terminal line
